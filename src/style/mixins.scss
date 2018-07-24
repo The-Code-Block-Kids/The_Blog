@@ -1,0 +1,84 @@
+@import 'vars';
+
+// -------------------------------------------------------------------------------------------------
+// MEDIA QUERIES
+// -------------------------------------------------------------------------------------------------
+// Small devices (small tablets and large smartphones (landscape view))
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+// Medium devices (small tablets (portrait view))
+@mixin md {
+  @media (min-width: #{$screen-md-min})
+  and (max-width: #{$screen-md-max}) {
+      @content;
+  }
+}
+
+// Large devices (tablets and small desktops)
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+
+// Extra large devices (large tablets and desktops)
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
+// -------------------------------------------------------------------------------------------------
+// VENDOR-SPECIFIC ANIMATION PREFIXES
+// -------------------------------------------------------------------------------------------------
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }  
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }  
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+
+@mixin animation($str) {
+-webkit-animation: #{$str};
+-moz-animation: #{$str};
+-ms-animation: #{$str};
+-o-animation: #{$str};
+animation: #{$str};      
+}
+
+// -------------------------------------------------------------------------------------------------
+// VENDOR-SPECIFIC TRANSITION PREFIXES
+// -------------------------------------------------------------------------------------------------
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// -------------------------------------------------------------------------------------------------
+// VENDOR-SPECIFIC BACKGROUND-SIZE PREFIXES
+// -------------------------------------------------------------------------------------------------
+@mixin background-size($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  background-size: $args;
+}

@@ -1,0 +1,63 @@
+{
+  "name": "The_Blog",
+  "version": "1.0.0",
+  "description": "Our Blog and source of great ideas",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage --forceExit --runInBand --watchAll",
+    "watch": "webpack-dev-server --config webpack.dev.js",
+    "pack": "webpack --config webpack.prod.js",
+    "postbuild": "webpack --progress --config webpack.prod.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Code-Block-Kids/The_Blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Code-Block-Kids/The_Blog/issues"
+  },
+  "homepage": "https://github.com/The-Code-Block-Kids/The_Blog#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^1.0.0",
+    "dotenv": "^6.0.0",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-react": "^7.10.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-svg-loader": "^2.1.0",
+    "redux": "^4.0.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.3"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "express": "^4.16.3",
+    "html-webpack-exclude-empty-assets-plugin": "^0.1.1",
+    "react-favicon": "0.0.14",
+    "react-helmet": "^5.2.0"
+  }
+}
