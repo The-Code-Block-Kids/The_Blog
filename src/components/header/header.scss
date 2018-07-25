@@ -3,4 +3,18 @@
 header {
   background-color: black;
   color: $off-white;
+
+  li {
+    display: inline-block;
+    margin: 10px;
+  }
+  a {
+    color: $off-white;
+  }
+  a:visited {
+    color: $off-white;
+  }
+  li {
+    list-style: none;
+  }
 }
