@@ -5,6 +5,7 @@ import Favicon from 'react-favicon';
 
 import ScrollToTop from '../scroll-to-top';
 import AuthRedirect from '../auth-redirect';
+import Login from '../login';
 import Header from '../header';
 import Footer from '../footer';
 import ROUTES from '../../routes';
@@ -31,6 +32,7 @@ export default class App extends Component {
           <Header/>
           <Route path='*' component={AuthRedirect}/>
           <Route exact path={ROUTES.LANDING} component={Landing}/>
+          <Route exact path={ROUTES.LOGIN} component={Login}/>
           <Footer/>
         </ScrollToTop>
       </BrowserRouter>
