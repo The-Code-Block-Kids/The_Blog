@@ -6,6 +6,7 @@ import Favicon from 'react-favicon';
 import ScrollToTop from '../scroll-to-top';
 import AuthRedirect from '../auth-redirect';
 import Login from '../login';
+import ArticleForm from '../article-form';
 import Header from '../header';
 import Footer from '../footer';
 import ROUTES from '../../routes';
@@ -23,6 +24,7 @@ export default class App extends Component {
         <ScrollToTop>
           {/* <Favicon url={}/> */}
           <Helmet>
+            <meta charSet="utf-8"/>
             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
             <meta property="og:title" content="Magnifico 7 Group Blog" />
             <meta property="og:type" content="website" />
@@ -33,6 +35,7 @@ export default class App extends Component {
           <Route path='*' component={AuthRedirect}/>
           <Route exact path={ROUTES.LANDING} component={Landing}/>
           <Route exact path={ROUTES.LOGIN} component={Login}/>
+          <Route exact path={ROUTES.CREATE} component={ArticleForm}/>
           <Footer/>
         </ScrollToTop>
       </BrowserRouter>
