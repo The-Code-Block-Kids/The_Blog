@@ -1,18 +1,18 @@
 @import '../../style/vars';
 
 header {
-  background-color: black;
-  color: $off-white;
+  background-color: $colorTwo;
+  color: $colorThree;
 
   li {
     display: inline-block;
     margin: 10px;
   }
   a {
-    color: $off-white;
+    color: $colorThree;
   }
   a:visited {
-    color: $off-white;
+    color: $colorThree;
   }
   li {
     list-style: none;
