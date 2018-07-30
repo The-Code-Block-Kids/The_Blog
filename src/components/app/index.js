@@ -7,6 +7,7 @@ import ScrollToTop from '../scroll-to-top';
 import AuthRedirect from '../auth-redirect';
 import Login from '../login';
 import ArticleForm from '../article-form';
+import AuthorProfile from '../author-profile';
 import Header from '../header';
 import Footer from '../footer';
 import ROUTES from '../../routes';
@@ -36,6 +37,7 @@ export default class App extends Component {
           <Route exact path={ROUTES.LANDING} component={Landing}/>
           <Route exact path={ROUTES.LOGIN} component={Login}/>
           <Route exact path={ROUTES.CREATE} component={ArticleForm}/>
+          <Route path={ROUTES.PROFILE} component={AuthorProfile}/>
           <Footer/>
         </ScrollToTop>
       </BrowserRouter>
