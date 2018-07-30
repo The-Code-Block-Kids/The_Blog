@@ -1,6 +1,7 @@
 const ROUTES = {
   LANDING: '/',
   LOGIN: '/login',
+  SIGNUP: '/signup',
   CREATE: '/create',
   PROFILE: '/profile',
 };

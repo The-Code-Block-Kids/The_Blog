@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/auto-bind';
 
-export default class Login extends React.Component {
+export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,7 +10,7 @@ export default class Login extends React.Component {
       password: '',
       secret: '',
     };
-    autoBind.call(this, Login);
+    autoBind.call(this, AuthForm);
   }
 
   handleChange(e) {
@@ -59,6 +59,6 @@ export default class Login extends React.Component {
   }
 }
 
-Login.propTypes = {
+AuthForm.propTypes = {
   type: PropTypes.string,
 };
