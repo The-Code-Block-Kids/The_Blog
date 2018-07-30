@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/auto-bind';
+import './auth-form.scss';
 
 export default class AuthForm extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class AuthForm extends React.Component {
     const buttonText = this.props.type === 'signup' ? 'Sign Up' : 'Log In';
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className='fade-in'>
+        <form onSubmit={this.handleSubmit} className='auth-form fade-in'>
           <input
             type='text'
             name='username'

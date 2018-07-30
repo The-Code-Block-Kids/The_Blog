@@ -1,0 +1,12 @@
+@import '../../style/vars';
+
+.auth-form {
+  input {
+    display: block;
+    margin: 1em auto;
+    height: 3vw;
+    width: 20vw;
+    border: 1px solid $accent-main;
+    padding: 0.5em;
+  }
+}
