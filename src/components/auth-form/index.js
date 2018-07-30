@@ -20,7 +20,9 @@ export default class AuthForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // verify with backend
+    e.preventDefault();
+    // form validation here
+    this.props.onComplete(this.state);
   }
 
   render() {
@@ -46,7 +48,7 @@ export default class AuthForm extends React.Component {
           {
             this.props.type === 'signup'
             && <input
-              type='text'
+              type='password'
               name='secret'
               placeholder='secret'
               value={this.state.secret}
@@ -62,4 +64,5 @@ export default class AuthForm extends React.Component {
 
 AuthForm.propTypes = {
   type: PropTypes.string,
+  onComplete: PropTypes.func,
 };

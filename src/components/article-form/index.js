@@ -1,5 +1,6 @@
 import React from 'react';
 import autoBind from '../../utils/auto-bind';
+import './article-form.scss';
 
 const emptyState = {
   title: '',
@@ -23,14 +24,16 @@ export default class ArticleForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // ----------------------------
+    // TODO: form validation
     // TODO: send to backend, etc.
     // ----------------------------
+    console.log(this.state);
     this.setState(emptyState);
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className='article-form'>
         <input
           type='text'
           value={this.state.title}
