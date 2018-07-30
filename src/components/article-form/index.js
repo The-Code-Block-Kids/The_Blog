@@ -5,6 +5,7 @@ const emptyState = {
   title: '',
   content: '',
   tags: '',
+  link: '',
 };
 
 export default class ArticleForm extends React.Component {
@@ -41,6 +42,13 @@ export default class ArticleForm extends React.Component {
           value={this.state.content}
           placeholder='Type article here'
           name='content'
+          onChange={this.handleChange}
+        />
+        <input
+          type='url'
+          value={this.state.link}
+          placeholder='link'
+          name='link'
           onChange={this.handleChange}
         />
         <input
