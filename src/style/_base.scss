@@ -4,7 +4,7 @@
 body {
   @include background-size(cover);
 
-  background-color: $off-white;
+  background-color: $white;
   background-size: cover;
   text-align: center;
   width: 100%;
@@ -18,14 +18,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-// -------------------------------------------------------------------------------------------------
-// LANDING PAGE STYLING
-// -------------------------------------------------------------------------------------------------
-.landing-page {
-  margin: 5vw auto;
-  width: 80%;
 }
 
 // -------------------------------------------------------------------------------------------------
