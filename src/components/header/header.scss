@@ -114,7 +114,7 @@ header {
 // -------------------------------------------------------------------------------
 .search {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 
   .searchTerm {
     border: 0.3rem solid $colorOne;
@@ -122,8 +122,9 @@ header {
     border-bottom-left-radius: 0.3rem;
     color: $colorThree;
     height: 2rem;
-    padding: 0.2rem;
+    margin-bottom: 0;
     outline: none;
+    padding: 0.2rem;
     width: 15rem;
   
     &:focus {
@@ -140,7 +141,6 @@ header {
     cursor: pointer;
     font-size: 0.5rem;
     height: 3rem;
-    text-align: center;
     width: 2rem;
   }
 }
