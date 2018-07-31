@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb-base","plugin:react/recommended"],
+  "extends": ["airbnb-base","plugin:react/recommended", "plugin:jest/recommended"],
   "env": {
     "browser": true
   },
@@ -7,7 +7,7 @@
     "API_URL": true
   },
   "parser": "babel-eslint",
-  "plugins": ["react"],
+  "plugins": ["react", "jest"],
   "rules": {
     "arrow-body-style": "off",
     "class-methods-use-this": "off",

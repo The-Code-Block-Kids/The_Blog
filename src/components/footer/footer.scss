@@ -1,6 +1,11 @@
 @import '../../style/vars';
 
-header {
-  background-color: black;
+footer {
+  background-color: $main-dark;
   color: $off-white;
+
+  a {
+    color: $off-white;
+    text-decoration: none;
+  }
 }

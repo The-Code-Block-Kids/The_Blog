@@ -1,10 +1,12 @@
 import React from 'react';
 import autoBind from '../../utils/auto-bind';
+import './article-form.scss';
 
 const emptyState = {
   title: '',
   content: '',
   tags: '',
+  link: '',
 };
 
 export default class ArticleForm extends React.Component {
@@ -22,14 +24,16 @@ export default class ArticleForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // ----------------------------
+    // TODO: form validation
     // TODO: send to backend, etc.
     // ----------------------------
+    console.log(this.state);
     this.setState(emptyState);
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className='article-form'>
         <input
           type='text'
           value={this.state.title}
@@ -41,6 +45,13 @@ export default class ArticleForm extends React.Component {
           value={this.state.content}
           placeholder='Type article here'
           name='content'
+          onChange={this.handleChange}
+        />
+        <input
+          type='url'
+          value={this.state.link}
+          placeholder='link'
+          name='link'
           onChange={this.handleChange}
         />
         <input
