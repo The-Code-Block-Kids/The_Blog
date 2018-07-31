@@ -25,18 +25,17 @@ body {
 }
 
 // -------------------------------------------------------------------------------------------------
-// LANDING PAGE STYLING
-// -------------------------------------------------------------------------------------------------
-.landing-page {
-  margin: 5vw auto;
-  width: 80%;
-}
-
-// -------------------------------------------------------------------------------------------------
 // PAGE LOAD
 // -------------------------------------------------------------------------------------------------
 .fade-in {
   opacity: 0;
   @include animation('fadeIn 500ms ease-in 1 200ms forwards');
   @include keyframes(fadeIn) { from { opacity:0; } to { opacity:1; } }
+}
+
+input {
+  display: block;
+  margin: 1em auto;
+  border: 1px solid $accent-main;
+  padding: 0.5em;
 }

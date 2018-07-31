@@ -6,8 +6,9 @@ import Favicon from 'react-favicon';
 import favicon from '../../assets/svgs/icomoon/infinite.svg';
 import ScrollToTop from '../scroll-to-top';
 import AuthRedirect from '../auth-redirect';
-import Login from '../login';
+import AuthLanding from '../auth-landing';
 import ArticleForm from '../article-form';
+import AuthorProfile from '../author-profile';
 import Header from '../header';
 import ROUTES from '../../routes';
 import '../../style/main.scss';
@@ -34,8 +35,10 @@ export default class App extends Component {
           <Header/>
           <Route path='*' component={AuthRedirect}/>
           <Route exact path={ROUTES.LANDING} component={Landing}/>
-          <Route exact path={ROUTES.LOGIN} component={Login}/>
+          <Route exact path={ROUTES.LOGIN} component={AuthLanding}/>
+          <Route exact path={ROUTES.SIGNUP} component={AuthLanding}/>
           <Route exact path={ROUTES.CREATE} component={ArticleForm}/>
+          <Route path={ROUTES.PROFILE} component={AuthorProfile}/>
         </ScrollToTop>
       </BrowserRouter>
     );
