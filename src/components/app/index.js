@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Favicon from 'react-favicon';
 
+import favicon from '../../assets/svgs/icomoon/infinite.svg';
 import ScrollToTop from '../scroll-to-top';
 import AuthRedirect from '../auth-redirect';
 import Login from '../login';
@@ -21,7 +22,7 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <ScrollToTop>
-          {/* <Favicon url={}/> */}
+          <Favicon url={favicon}/>
           <Helmet>
             <meta charSet="utf-8"/>
             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
