@@ -1,20 +1,280 @@
 @import '../../style/vars';
+@import '../../style/mixins';
 
 header {
-  background-color: $colorTwo;
-  color: $colorThree;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 
-  li {
-    display: inline-block;
-    margin: 10px;
+  background-color: $colorTwo;
+  border-bottom: 0.5rem solid $colorFive;
+  box-shadow: $shadow;
+  color: $colorThree;
+  min-height: 100px;
+
+  @include sm {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    box-shadow: $shadow;
+    width: 100%;
+    z-index: 3;
+
+    &:focus, &:hover ul {
+      display: block;
+    }
   }
+
+  h1 {
+    display: flex;
+    align-items: flex-end;
+
+    margin: 1rem 1rem 0.5rem 1rem;
+
+    @include sm {
+      display: none;
+    }
+
+    .infinite {
+      height: 3rem;
+      margin-right: 1rem;
+      width: 3rem;
+      padding: 0;
+
+      path {
+        fill: $colorFive;
+      }
+    }
+
+    a:-webkit-any-link {
+      color: $colorThree;
+      text-decoration: none;
+  
+     &:hover {
+       color: $colorFive;
+     }
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+
+    margin: 3rem 1rem 0.5rem 1rem;
+
+    @include sm {
+      display: none;
+    }
+
+    div {
+      margin-left: 1rem;
+    }
+  }
+
   a {
     color: $colorThree;
+
+    &:visited {
+      color: $colorThree;
+    }
   }
-  a:visited {
+}
+
+// -------------------------------------------------------------------------------
+// Styling for each individual Link in the Navigation bar
+// -------------------------------------------------------------------------------
+.nav-button-container {
+  display: inline-block;
+
+  .link-button {
+    background-color: inherit;
+    border: none;
+    font-family: inherit;
+    font-size: 0.8rem;
+    outline: none;
+    text-align: left;
+
+    a {
+      color: $colorThree;
+      display: inline-block;
+      font-size: 1.5rem;
+      text-decoration: none;
+
+      &:hover {
+        color: $colorFive;
+      }
+    }
+  }
+}
+
+// -------------------------------------------------------------------------------
+// Search Bar
+// -------------------------------------------------------------------------------
+.search {
+  display: flex;
+  align-items: center;
+
+  .searchTerm {
+    border: 0.3rem solid $colorOne;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
     color: $colorThree;
+    height: 2rem;
+    padding: 0.2rem;
+    outline: none;
+    width: 10rem;
+  
+    &:focus {
+      color: $colorOne;
+    }
   }
+
+  .searchButton {
+    background: $colorOne;
+    border: 0.1rem solid $colorOne;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    color: $colorThree;
+    cursor: pointer;
+    font-size: 0.5rem;
+    height: 3rem;
+    text-align: center;
+    width: 2rem;
+  }
+}
+
+// -------------------------------------------------------------------------------
+// Styling for each drop-down section which contains a list of Links
+// -------------------------------------------------------------------------------
+.dropdown {
+  display: inline-block;
+  overflow: inherit;
+  
+  .dropbutton {
+    background-color: inherit;
+    border: none;
+    color: $colorThree;
+    font-family: inherit;
+    font-size: 1.5rem;
+    outline: none;
+    text-align: left;
+
+    &:hover {
+      color: $colorFive;
+    }
+  }
+
+  .dropdown-list {
+    background-color: $colorTwo;
+    box-shadow: $shadow;
+    display: none;
+    font-size: 1.5rem;
+    min-width: 160px;
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 1;
+
+    a:-webkit-any-link {
+      color: $colorThree;
+      display: block;
+      margin: 1rem 0;
+      text-align: left;
+      text-decoration: none;
+
+      &:hover {
+        color: $colorFive;
+      }
+    }
+  }
+
+  &:hover .dropdown-list {
+    display: block;
+  }
+}
+
+// -------------------------------------------------------------------------------
+// Mobile Drop Down Menu
+// -------------------------------------------------------------------------------
+.menu-icon {
+  cursor: pointer;
+  display: none;
+  float: right;
+  height: 4rem;
+  padding: 1rem 1rem;
+  position: relative;
+  user-select: none;
+  width: 4rem;
+
+  &:hover ~ .menu-list{
+    height: 250px;
+  }
+
+  @include sm {
+    display: inline-block;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  path {
+    fill: $colorFive;
+  }
+}
+
+.menu-list {
+  background-color: $colorOne;
+  display: none;
+  float: right;
+  height: 0;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: height 0.3s linear;
+  transition-delay: 0.2s;
+  width: 100%;
+  
   li {
-    list-style: none;
+    border-bottom: solid 0.1rem $colorSix;
+
+    a {
+      color: $colorThree;
+      display: block;
+      padding: 2rem;
+      text-decoration: none;
+  
+      &:hover {
+        background-color: #f4f4f4;
+      }
+    }
   }
+}
+
+// -------------------------------------------------------------------------------
+// Icomoon SVGs
+// -------------------------------------------------------------------------------
+.icomoon-svgs {
+  height: 1rem;
+  width: 1rem;
+
+  path {
+    fill: $colorFive;
+  }
+}
+
+.drop-down-icon {
+  @include transition(250ms ease-in-out);
+  height: 1rem;
+  width: 1rem;
+}
+
+// -------------------------------------------------------------------------------
+// Animation for the drop-down section SVGs
+// -------------------------------------------------------------------------------
+.dropdown:hover .dropbutton .drop-down-icon {
+  @include transition(250ms ease-in-out);
+  transform: rotate(90deg);
 }

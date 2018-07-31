@@ -1,6 +1,10 @@
 @import 'vars';
 @import 'mixins';
 
+// * {
+//   outline: dashed 1px red;
+// }
+
 body {
   @include background-size(cover);
 

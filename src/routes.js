@@ -10,6 +10,7 @@ const ROUTES = {
   RYAN: '/ryan-groesch',
   SARAH: '/sarah-geyer',
   SEAN: '/sean-miller',
+  CONTACT: '/contact',
 };
 
 export default ROUTES;

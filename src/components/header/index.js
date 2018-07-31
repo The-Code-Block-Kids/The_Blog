@@ -5,7 +5,13 @@ import ROUTES from '../../routes';
 // -------------------------------------------------------------------------------------------------
 // SVG IMPORTS
 // -------------------------------------------------------------------------------------------------
+import InfiniteSVG from '../../assets/svgs/icomoon/infinite.svg';
+import SearchSVG from '../../assets/svgs/icomoon/search.svg';
 import DropDownSVG from '../../assets/svgs/icomoon/play3.svg';
+import MobileMenuSVG from '../../assets/svgs/icomoon/joomla.svg';
+import HomeSVG from '../../assets/svgs/icomoon/home.svg';
+import AboutSVG from '../../assets/svgs/icomoon/users.svg';
+import ContactSVG from '../../assets/svgs/icomoon/address-book.svg';
 
 import './header.scss';
 
@@ -13,13 +19,26 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        {/* LOGO/TITLE */}
-        <nav className='topnav'>
+        <h1>
+          <InfiniteSVG className='infinite'/>
+          <Link to={ROUTES.LANDING}>Loopers</Link>
+        </h1>
+        <nav>
+
           <div className='nav-button-container'>
-            <button className='link-button'><Link to={ROUTES.LANDING}>Home </Link></button>
+            <button className='link-button'>
+              <Link to={ROUTES.ABOUT}>
+                About <AboutSVG className='icomoon-svgs'/>
+              </Link>
+            </button>
           </div>
+
           <div className='nav-button-container'>
-            <button className='link-button'><Link to='/contact'>About </Link></button>
+            <button className='link-button'>
+              <Link to={ROUTES.CONTACT}>
+                Contact <ContactSVG className='icomoon-svgs'/> 
+              </Link>
+            </button>
           </div>
 
           <div className='dropdown'>
@@ -37,7 +56,33 @@ export default class Header extends Component {
             </div>
           </div>
 
+          <div className='search'>
+            <input type='text' className='searchTerm' placeholder='Search for articles'/>
+            <button type='submit' className='searchButton'>
+              <SearchSVG className='icomoon-svgs'/>
+            </button>
+          </div>
+
         </nav>
+
+      <MobileMenuSVG className='menu-icon'/>
+        <ul className='menu-list'>
+          <li>
+            <Link to='/'>
+              Home <HomeSVG className='icomoon-svgs'/>
+            </Link>
+          </li>
+          <li>
+            <Link to='/about'>
+              About <AboutSVG className='icomoon-svgs'/>
+            </Link>
+          </li>
+          <li>
+            <Link to='/contact'>
+              Contact <ContactSVG className='icomoon-svgs'/>
+            </Link>
+          </li>
+        </ul>
       </header>
     );
   }
